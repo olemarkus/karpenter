@@ -50,6 +50,17 @@ spec:
                     items:
                       type: string
                     type: array
+                  maxPods:
+                    description: MaxPods is the maximum number of Pods that can run
+                      on the Kubelet.
+                    format: int32
+                    type: integer
+                  podsPerCore:
+                    description: PodsPerCore is the maximum number of pods per core.
+                      Cannot exceed maxPods. The value must be a non-negative integer.
+                      If 0, there is no limit on the number of Pods.
+                    format: int32
+                    type: integer
                 type: object
               labels:
                 additionalProperties:

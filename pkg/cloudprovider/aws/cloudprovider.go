@@ -129,7 +129,7 @@ func (c *CloudProvider) GetInstanceTypes(ctx context.Context, constraints *v1alp
 	if err != nil {
 		return nil, apis.ErrGeneric(err.Error())
 	}
-	return c.instanceTypeProvider.Get(ctx, vendorConstraints.AWS)
+	return c.instanceTypeProvider.Get(ctx, vendorConstraints.AWS, constraints.KubeletConfiguration)
 }
 
 func (c *CloudProvider) Delete(ctx context.Context, node *v1.Node) error {
